@@ -1,5 +1,5 @@
 # reactiveops coding challenge
-this repos provides all the code to go from zero to a simple flask app serving the roo uri
+this repo provides all the code to go from zero to a simple flask app serving the root uri
 
 # terraform
 ## getting the public ip
@@ -25,5 +25,5 @@ just a stupid simple flask app for demo purposes
 # destroying and recreating yourself
 feel free to destroy and recreate the stack yourself.  if you want ssh access to the
 box you will need to pass a base64 encoded public ssh key to terraform via
-`--var public_key="<base64 encoded string>" and add your source ip to the `ssh-22`
+`--var public_key="<base64 encoded string>"` and add your source ip to the `ssh-22`
 security group in `security-groups.tf`
