@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#
+
+# set public key for ssh access
+echo "${ public_key }" | base64 -d >> /home/ubuntu/.ssh/authorized_keys
+
+# install deps (docker and git)
+sudo apt-get update
+
+sudo apt-get -qq -y install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common \
+    git
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt-get update
+
+sudo apt-get install -qq -y docker-ce
+
+# checkout flask app
+git clone https://github.com/sirlancealittle/reactiveops.git /opt/reactiveops
+
+# run the app
+docker run -d \
+  -v /opt/reactiveops/flask:/app \
+  -p 80:5000 \
+  --name reactiveops \
+  thebinary/alpine-flask
