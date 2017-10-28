@@ -1,7 +1,7 @@
 # reactiveops coding challend
 this repos provides all the code to go from zero to a simple flask app serving the roo uri
 
-# ./terraform
+# terraform
 ## getting the public ip
 ```
 cd terraform && terraform output
@@ -19,7 +19,7 @@ export AWS_SECRET_ACCESS_KEY="<aws_secret_acess_key>"
 terraform init && terraform apply
 ```
 
-# ./flask
+# flask
 just a stupid simple flask app for demo purposes
 
 # destroying and recreating yourself
