@@ -1,4 +1,4 @@
-# reactiveops coding challend
+# reactiveops coding challenge
 this repos provides all the code to go from zero to a simple flask app serving the roo uri
 
 # terraform
